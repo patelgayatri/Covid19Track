@@ -12,15 +12,13 @@ class ListAdapter(private val dataList: List<Table>, private val listener: Liste
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     interface Listener {
-
         fun onItemClick(android: Table)
     }
-//
+
     private val colors: Array<String> =
         arrayOf("#FBE9E9", "#F7FCE8", "#5C6BC0", "#42A5F5")
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-
         holder.bind(dataList[position], listener, position)
     }
 
@@ -49,7 +47,6 @@ class ListAdapter(private val dataList: List<Table>, private val listener: Liste
             itemView.tv_deaths.text = table.totalDeaths?.trim()
             itemView.tv_today_deaths.text = " " + table.newDeaths?.trim()
             itemView.tv_recovered.text = table.totalRecovered?.trim()
-
             itemView.setOnClickListener { listener.onItemClick(table) }
         }
     }
