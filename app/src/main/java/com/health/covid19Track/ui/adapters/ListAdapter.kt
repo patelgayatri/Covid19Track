@@ -15,7 +15,7 @@ class ListAdapter(private val dataList: List<Table>, private val listener: Liste
 
         fun onItemClick(android: Table)
     }
-
+//
     private val colors: Array<String> =
         arrayOf("#FBE9E9", "#F7FCE8", "#5C6BC0", "#42A5F5")
 
