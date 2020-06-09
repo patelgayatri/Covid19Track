@@ -73,7 +73,7 @@
                 android:id="@+id/tv_recovered"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Deaths"
+                android:text="-"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@android:color/holo_green_dark" />
         </LinearLayout>
@@ -86,8 +86,9 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
@@ -102,14 +103,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                    android:textColor="@color/red" />
+                    android:textColor="#FD1403" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_deaths"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Deaths"
+                android:gravity="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 android:textColor="@color/red" />
 

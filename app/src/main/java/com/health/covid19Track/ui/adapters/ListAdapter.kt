@@ -46,6 +46,7 @@ class ListAdapter(private val dataList: List<Table>, private val listener: Liste
             itemView.tv_totalcases.text = table.totalCases?.trim()
             itemView.tv_deaths.text = table.totalDeaths?.trim()
             itemView.tv_today_deaths.text = " " + table.newDeaths?.trim()
+            if(!table.totalRecovered.equals("N/A"))
             itemView.tv_recovered.text = table.totalRecovered?.trim()
             itemView.setOnClickListener { listener.onItemClick(table) }
         }

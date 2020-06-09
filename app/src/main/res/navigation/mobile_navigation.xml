@@ -17,5 +17,9 @@
         android:label="@string/title_list"
         tools:layout="@layout/fragment_dashboard" />
 
-
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="com.health.covid19Track.ui.fragments.NotificationsFragment"
+        android:label="@string/title_notifications"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
