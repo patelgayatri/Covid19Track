@@ -5,18 +5,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.health.covid19Track.R
+import com.health.covid19Track.model.Country
+import com.health.covid19Track.model.ReportC
 import com.letssee.covid19.model.Table
 import kotlinx.android.synthetic.main.row_list.view.*
 
-class ListAdapter(private val dataList: List<Table>, private val listener: Listener) :
+class ListAdapter(private val dataList: List<ReportC>, private val listener: Listener) :
     RecyclerView.Adapter<ListAdapter.ViewHolder>() {
 
     interface Listener {
         fun onItemClick(android: Table)
     }
 
-    private val colors: Array<String> =
-        arrayOf("#FBE9E9", "#F7FCE8", "#5C6BC0", "#42A5F5")
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(dataList[position], listener, position)
@@ -34,21 +34,22 @@ class ListAdapter(private val dataList: List<Table>, private val listener: Liste
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
         fun bind(
-            table: Table,
+            table: ReportC,
             listener: Listener,
             position: Int
         ) {
-            if (table.country?.length!! > 11 && table.country?.contains(" ")!!)
-                itemView.tv_name.text = table.country?.replaceFirst(" ", "\n")
+            if (table.countryText?.length!! > 11 && table.countryText?.contains(" ")!!)
+                itemView.tv_name.text = table.countryText?.replaceFirst(" ", "\n")
             else
-                itemView.tv_name.text = table.country?.trim()
-            itemView.tv_today_case.text = " " + table.newCases?.trim()
-            itemView.tv_totalcases.text = table.totalCases?.trim()
-            itemView.tv_deaths.text = table.totalDeaths?.trim()
-            itemView.tv_today_deaths.text = " " + table.newDeaths?.trim()
-            if(!table.totalRecovered.equals("N/A"))
-            itemView.tv_recovered.text = table.totalRecovered?.trim()
-            itemView.setOnClickListener { listener.onItemClick(table) }
+                itemView.tv_name.text = table.countryText?.trim()
+            itemView.tv_today_case.text = " " + table.newCasesText?.trim()
+            itemView.tv_totalcases.text = table.totalCasesText?.trim()
+            itemView.tv_deaths.text = table.totalCasesText?.trim()
+            itemView.tv_today_deaths.text = " " + table.newDeathsText?.trim()
+            if (!table.totalRecoveredText.equals("N/A"))
+                itemView.tv_recovered.text = table.totalRecoveredText?.trim()
+//            itemView.setOnClickListener { listener.onItemClick(table)
+
         }
     }
 }

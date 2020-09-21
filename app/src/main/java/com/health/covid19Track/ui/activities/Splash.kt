@@ -16,7 +16,7 @@ class Splash : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
 
-        Observable.timer(2000, TimeUnit.MILLISECONDS)
+        Observable.timer(3000, TimeUnit.MILLISECONDS)
             .subscribe {
                 val intent = Intent(applicationContext, MainActivity::class.java)
                 startActivity(intent)

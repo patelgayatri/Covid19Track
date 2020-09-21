@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.health.covid19Track.R
 import com.health.covid19Track.ui.adapters.ListAdapter
-import com.health.covid19Track.model.Country
+import com.health.covid19Track.model.ReportC
 import com.health.covid19Track.viewModels.ListViewModel
 import com.letssee.covid19.model.Table
 
@@ -67,15 +67,11 @@ class ListFragment : Fragment(), ListAdapter.Listener {
         Toast.makeText(activity, "Error", Toast.LENGTH_SHORT).show()
     }
 
-    private fun handleResponse(results: Country) {
+    private fun handleResponse(results: List<ReportC>) {
         dialog.dismiss()
 
-        mAdapter = results.reports?.get(0)?.table?.get(0)?.let {
-            ListAdapter(
-                it,
-                this
-            )
-        }
+        mAdapter = ListAdapter(results, this)
+
         recyclerView.adapter = mAdapter
     }
 

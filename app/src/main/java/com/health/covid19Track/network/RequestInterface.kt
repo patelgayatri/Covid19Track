@@ -3,6 +3,7 @@ package com.health.covid19Track.network
 import com.health.covid19Track.model.Country
 import com.health.covid19Track.model.HomeData
 import com.health.covid19Track.model.HomeResult
+import com.health.covid19Track.model.ReportC
 import io.reactivex.Observable
 import retrofit2.http.GET
 
@@ -13,8 +14,8 @@ interface RequestInterface {
     //https://covid-19.dataflowkit.com/v1/australia
 
 
-    @GET("api/v1/AllReports")
-    fun getCountryStats(): Observable<Country>
+    @GET("v1")
+    fun getCountryStats(): Observable<List<ReportC>>
 
     @GET("api/v1/cases/general-stats")
     fun getGeneralStats(): Observable<HomeResult>
